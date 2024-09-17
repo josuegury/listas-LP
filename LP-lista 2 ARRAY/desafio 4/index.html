@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           var numer = [[], [], []];
+
+        function adicionarValores() {
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                  
+        let valor = prompt(`Digite o valor para ${i + 1}ª array, ${j + 1}ª posição (número ou string):`);
+        let numero = parseFloat(valor);
+        if (!isNaN(numero)) {
+        numer[i][j] = numero;
+        } else {
+         numer[i][j] = valor;
+        }
+        }
+        }
+        } 
+        adicionarValores();
+        document.write("Matriz:<br>");
+        numer.forEach((linha, linhaIndex) => {
+            linha.forEach((valor, valorIndex) => {
+                document.write( "<br>" + `Valor na ${linhaIndex + 1}ª array, ${valorIndex + 1}ª posição: ${valor} (Tipo: ${typeof valor})<br>`);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        
+        const numeros = [];
+        for (let i = 0; i < 5; i++) {
+            let numero = parseInt(prompt("Digite um número inteiro:"));
+            if (!isNaN(numero)) {
+                numeros.push(numero);
+            } else {
+                alert("Por favor, digite um número válido.");
+                i--; 
+            }
+        }
+
+        
+        function calcularSoma() {
+            let soma = 0;
+            for (let i = 0; i < numeros.length; i++) {
+                soma += numeros[i];
+            }
+            return soma;
+        }
+
+        
+        const resultado = calcularSoma();
+        document.write("O resultado da soma é: " + resultado);
+    </script>
+     
+</body>
+</html>

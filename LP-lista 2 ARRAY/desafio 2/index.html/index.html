@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>desafio 2</title>
+</head>
+<body>
+    <h2>numeros das matrizes</h2>
+    <div id="inputs">
+    
+        <h3>Array 1</h3>
+        <input type="number" id="input00" placeholder="0,0">
+        <input type="number" id="input01" placeholder="0,1">
+        <input type="number" id="input02" placeholder="0,2">
+
+        <h3>Array 2</h3>
+        <input type="number" id="input10" placeholder="1,0">
+        <input type="number" id="input11" placeholder="1,1">
+        <input type="number" id="input12" placeholder="1,2">
+
+        <h3>Array 3</h3>
+        <input type="number" id="input20" placeholder="2,0">
+        <input type="number" id="input21" placeholder="2,1">
+        <input type="number" id="input22" placeholder="2,2">
+
+    </div>
+
+    <h2>Multiplicador</h2>
+ 
+    <input type="number" id="multiplicador" placeholder="Multiplicador">
+ 
+    <button onclick="processarDados()">Processar</button>
+
+    <h2>Matriz Original</h2>
+   
+    <div id="matrizOriginal"></div>
+
+    <h2>Matriz Multiplicada</h2>
+    <div id="matrizMultiplicada"></div>
+
+    <script>
+        function obterValoresMatriz() {
+            return [
+                [
+                    parseFloat(document.querySelector('#input00').value) || 0,
+                    parseFloat(document.querySelector('#input01').value) || 0,
+                    parseFloat(document.querySelector('#input02').value) || 0-
+                ],
+                [
+                    parseFloat(document.querySelector('#input10').value) || 0,
+                    parseFloat(document.querySelector('#input11').value) || 0,
+                    parseFloat(document.querySelector('#input12').value) || 0
+                ],
+                [
+                    parseFloat(document.querySelector('#input20').value) || 0,
+                    parseFloat(document.querySelector('#input21').value) || 0,
+                    parseFloat(document.querySelector('#input22').value) || 0
+                ]
+            ];
+        }
+  
+        function obterMultiplicador() {
+           
+            return parseFloat(document.querySelector('#multiplicador').value) || 1;
+        }
+
+        function multiplicarMatriz(matriz, multiplicador) {
+            return matriz.map(row => row.map(valor => valor * multiplicador));
+        }
+
+        function exibirMatriz(id, matriz) {
+            const elemento = document.querySelector(id);
+           
+            elemento.innerHTML = matriz.map(row => row.join(', ')).join('<br>');
+        }
+ 
+        function processarDados() {
+            const matrizOriginal = obterValoresMatriz();
+            const multiplicador = obterMultiplicador();
+            const matrizMultiplicada = multiplicarMatriz(matrizOriginal, multiplicador);
+
+            exibirMatriz('#matrizOriginal', matrizOriginal);
+            exibirMatriz('#matrizMultiplicada', matrizMultiplicada);
+        }
+    </script>
+</body>
+</html>
+

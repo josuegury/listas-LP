@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+        var numer = [[], [], []];
+        
+       
+        numer[0][0] = parseInt(prompt("Digite um número da 1ª array"));
+        numer[0][1] = parseInt(prompt("Digite um número da 1ª array"));
+        numer[0][2] = parseInt(prompt("Digite um número da 1ª array"));
+
+        numer[1][0] = parseInt(prompt("Digite um número da 2ª array"));
+        numer[1][1] = parseInt(prompt("Digite um número da 2ª array"));
+        numer[1][2] = parseInt(prompt("Digite um número da 2ª array"));
+
+        numer[2][0] = parseInt(prompt("Digite um número da 3ª array"));
+        numer[2][1] = parseInt(prompt("Digite um número da 3ª array"));
+        numer[2][2] = parseInt(prompt("Digite um número da 3ª array"));
+
+        document.write("Números do 1º array: " + numer[0] + "<br>");
+        document.write("Números do 2º array: " + numer[1] + "<br>");
+        document.write("Números do 3º array: " + numer[2] + "<br>");
+
+
+       
+        function maiorValorLinha(linha) {
+            return Math.max(...linha);
+        }
+
+        
+        var maioresPorLinha = numer.map(linha => maiorValorLinha(linha));
+        
+        var maiorValorTotal = Math.max(...maioresPorLinha);
+
+      
+        document.write( "<br>" + "MATRIZ: <br>");
+        numer.forEach((linha, index) => {
+           
+            document.write(`Maior valor da ${index + 1}ª array: ${maiorValorLinha(linha)}<br>`);
+        })
+        document.write( "<br>" + "MAIOR VALOR: <br>");
+        document.write( "<br>" + `Maior valor dentre todas as matrizes: ${maiorValorTotal}<br>`);
+    </script>
+</body>
+</html>
