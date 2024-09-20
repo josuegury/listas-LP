@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Desafio 3</title>
+</head>
+<body>
+    <h1> soma de tudo</h1>
+    <script>
+
+        var num = [[], [], []];
+        
+  num[0][0] = parseInt(prompt("Digite um número "));
+   num[0][1] = parseInt(prompt("Digite um número" ));
+   num[0][2] = parseInt(prompt("Digite um número"));
+
+   num[1][0] = parseInt(prompt("Digite um número"));
+   num[1][1] = parseInt(prompt("Digite um número "));
+  num[1][2] = parseInt(prompt("Digite um número "));
+
+   num[2][0] = parseInt(prompt("Digite um número"));
+   num[2][1] = parseInt(prompt("Digite um número "));
+   num[2][2] = parseInt(prompt("Digite um número"));
+
+
+        document.write("Números do 1 array: " + num[0] + "<br>");
+        document.write("Números do 2 array: " + num[1] + "<br>");
+        document.write("Números do 3 array: " + num[2] + "<br>");
+
+
+ var totalSoma = 0;
+
+   num.forEach(function(array) {
+  totalSoma += array.reduce(function(soma, valor) {
+    return soma + valor;
+   }, 0);
+  });
+  
+  document.write("Soma total dos valores: " + totalSoma + "<br>");
+  document.write("voltar para as opções dessa lista: ")
+        
+    </script>
+    
+      <a href="indexl2.html"> voltar:</a>
+      <br>
+      <script>
+        document.write("voltar ao menu de seleção de lista  ");
+      </script>
+       <a href="index.html"> ir para o inicio:</a>
+       <br>
+ 
+</body>
+</html>

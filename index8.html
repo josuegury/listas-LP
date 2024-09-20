@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio 2</title>
+</head>
+<body>
+    <h2>Numeros multiplicados </h2>
+    <div id="inputs">
+        <h3>Primeiros números</h3>
+        <input type="num" id="numero1" placeholder="0">
+        <input type="num" id="numero2" placeholder="1">
+        <input type="num" id="numero3" placeholder="2">
+
+        <h3>Três números do meio</h3>
+        <input type="num" id="numero4" placeholder="3">
+        <input type="num" id="numero5" placeholder="4">
+        <input type="num" id="numero6" placeholder="5">
+
+        <h3>Últimos valores</h3>
+        <input type="num" id="numero9" placeholder="6">
+        <input type="num" id="numero10" placeholder="7">
+        <input type="num" id="numero11" placeholder="8">
+    </div>
+
+    <h2>Multiplicador</h2>
+    <input type="num" id="multiplicador" placeholder="Multiplique por esse número">
+    <button onclick="processarDados()">Exibir o resultado de tudo</button>
+
+    <script>
+        function obterValoresMatriz() {
+      return [
+ [parseInt(document.querySelector('#numero1').value), 
+parseInt(document.querySelector('#numero2').value),
+ parseInt(document.querySelector('#numero3').value)],
+
+ [parseInt(document.querySelector('#numero4').value),
+ parseInt(document.querySelector('#numero5').value), 
+ parseInt(document.querySelector('#numero6').value)],
+
+[parseInt(document.querySelector('#numero9').value),
+parseInt(document.querySelector('#numero10').value), 
+parseInt(document.querySelector('#numero11').value)]
+
+];}
+
+   function obterMultiplicador() {
+     return parseInt(document.querySelector('#multiplicador').value) 
+   }
+
+     function multiplicarMatriz(matriz, multiplicador) {
+     return matriz.map(row => row.map(valor => valor * multiplicador));
+    }
+    function exibirMatriz(id, matriz) {
+        const elemento = document.querySelector(id);
+            elemento.innerHTML = matriz.map(row => row.join(', ')).join('<br>');
+        }
+
+        function processarDados() {
+            const matrizOriginal = obterValoresMatriz();
+            const multiplicador = obterMultiplicador();
+            const matrizMultiplicada = multiplicarMatriz(matrizOriginal, multiplicador);
+
+            document.write('numeros digitados:', matrizOriginal + "<br>");
+            document.write('multiplicados pelo multiplicador', matrizMultiplicada + "<br>");
+           
+        }
+        
+    </script>
+
+    <script>
+          document.write("voltar para as opções dessa lista:")
+    </script>
+    <br>
+      <a href="indexl2.html"> voltar:</a>
+      <script>
+        document.write("voltar ao menu de seleção de lista  ");
+      </script>
+       <a href="index.html"> ir para o inicio:</a>
+       <br>
+</body>
+</html>

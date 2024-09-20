@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var num = [[], [], []];
+        
+     num[0][0] = parseInt(prompt("Digite um número "));
+    num[0][1] = parseInt(prompt("Digite um número "));
+    num[0][2] = parseInt(prompt("Digite um número "));
+
+  num[1][0] = parseInt(prompt("Digite outro"));
+  num[1][1] = parseInt(prompt("Digite outro"));
+  num[1][2] = parseInt(prompt("Digite outro"));
+
+num[2][0] = parseInt(prompt("Digite mais um"));
+num[2][1] = parseInt(prompt("Digite mais um outro"));
+ num[2][2] = parseInt(prompt("Digite o ultimo"));
+
+  document.write("Números do 1 array: " + num[0] + "<br>");
+  document.write("Números do 2 array: " + num[1] + "<br>");
+   document.write("Números do 3 array: " + num[2] + "<br>");
+
+        function maiorValorLinha(linha) {
+            return Math.max(...linha);
+        }
+
+        var maioresPorLinha = num.map(linha => maiorValorLinha(linha));
+
+        var maiorValorTotal = Math.max(...maioresPorLinha);
+
+        document.write("<br>" + "MAIOR VALOR: <br>");
+        document.write("<br>" + `maior valor geral: ${maiorValorTotal}<br>`);
+        document.write("voltar para as opções dessa lista: ")
+        
+    </script>
+    
+      <a href="indexl2.html"> voltar:</a>
+      <br>
+      <script>
+        document.write("voltar ao menu de seleção de lista  ");
+      </script>
+       <a href="index.html"> ir para o inicio:</a>
+       <br>
+</body>
+</html>

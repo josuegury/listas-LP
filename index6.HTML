@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <script>
+       
+        var val, menor, maior, soma = 0;
+        var n = []; 
+        for (let i = 0; i < 3; i++) {
+            val = parseInt(prompt("Digite 3 números:"));
+            n.push(val);
+            soma += val;
+            if (i === 0) {
+                menor = val;
+                maior = val;
+            } else {
+                if (val < menor) {
+                    menor = val;
+                }
+                if (val > maior) {
+                    maior = val;
+                }
+            }
+        }
+        if (soma > 100) {
+            document.write("a soma excedeu 100, o maior valor é"+maior + "<br>");
+        } else {
+            document.write("a soma esta abaixo de 100, o menor valor é "+menor+ "<br>");
+        }
+        document.write("voltar para as opções dessa lista: ")
+        
+    </script>
+    
+      <a href="indexl1.html"> voltar:</a>
+      <br>
+      <script>
+        document.write("voltar ao menu de seleção de lista  ");
+      </script>
+       <a href="index.html"> ir para o inicio:</a>
+       <br>
+
+</body>
+</html>

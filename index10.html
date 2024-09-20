@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = [[], [], []];
+
+  function adicionarValores() {
+  for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+  let valor = prompt("Digite um numero ou uma palavra ");
+ let numero = parseFloat(valor);
+   num[i][j] = !isNaN(numero) ? numero : valor;
+   }}  }
+
+adicionarValores();
+   document.write("Matriz:<br>");
+  num.flat().forEach((valor) => {
+   document.write(`<br>Valor: ${valor} (Tipo: ${typeof valor})<br>`);
+        });
+        document.write("voltar para as opções dessa lista: ")
+        
+    </script>
+    
+      <a href="indexl2.html"> voltar:</a>
+      <br>
+      <script>
+        document.write("voltar ao menu de seleção de lista  ");
+      </script>
+       <a href="index.html"> ir para o inicio:</a>
+       <br>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     var palavras = [];
+// Recebe os elementos
+for (let i = 0; i < 5; i++) {
+    let palavra = prompt('Digite uma palavra');
+    palavras.push(palavra);
+}
+
+let maisLonga = palavras[0];
+for (let i = 1; i < palavras.length; i++) {
+    if (palavras[i].length > maisLonga.length) {
+        maisLonga = palavras[i];
+    }
+}
+
+// Exibe o comprimento da palavra mais longa
+document.write("A palavra mais longa tem " + maisLonga.length + " caracteres." + "<br>");
+document.write("voltar para as opções dessa lista: ")
+        
+    </script>
+    
+      <a href="indexl1.html"> voltar:</a>
+      <br>
+      <script>
+        document.write("voltar ao menu de seleção de lista  ");
+      </script>
+       <a href="index.html"> ir para o inicio:</a>
+       <br>
+
+</body>
+</html>
